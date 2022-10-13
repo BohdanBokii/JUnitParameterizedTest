@@ -1,12 +1,13 @@
 package Wikipedia;
 
 import DriverConfig.BaseClass;
-import org.junit.*;
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
-import java.io.UnsupportedEncodingException;
-import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.ResourceBundle;
@@ -53,5 +54,31 @@ public class TestWiki extends BaseClass {
     @Test
     public void testTab2() {
         Assert.assertEquals(wikiHomePage.getTextTab2(), bundle.getString("menutab2"));
+    }
+
+    @Test
+    public void testTab3() {
+        Assert.assertEquals(wikiHomePage.getTextTab3(), bundle.getString("menutab3"));
+    }
+
+    @Test
+    public void testTab4() {
+        Assert.assertEquals(wikiHomePage.getTextTab4(), bundle.getString("menutab4"));
+    }
+
+    @Test
+    public void existElements() {
+        Assert.assertTrue((wikiHomePage.searchButton).isDisplayed());
+        System.out.println("Search button is displayed");
+        Assert.assertTrue((wikiHomePage.login).isDisplayed());
+        System.out.println("Login tab is displayed");
+    }
+    @Test
+    public void testHeadTab3() {
+        Assert.assertEquals(wikiHomePage.getTextHeadTab3(), bundle.getString("headtab3"));
+    }
+    @Test
+    public void testLogin() {
+        Assert.assertEquals(wikiHomePage.getTextLogin(), bundle.getString("login"));
     }
 }
